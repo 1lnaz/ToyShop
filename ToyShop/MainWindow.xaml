@@ -1,0 +1,37 @@
+﻿<Window x:Class="ToyShop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToyShop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="140" x:Name="AdminBtn" Grid.Row="1" Grid.Column="0" Click="AdminBtn_Click">Добавить</Button>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="140" x:Name="ClientBtn" Grid.Row="2" Grid.Column="0" Click="ClientBtn_Click">Редактировать</Button>
+        <ListView x:Name="ToysList" Grid.Column="1" Grid.RowSpan="4">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Background="{Binding ColorBG}">
+                        <TextBlock Text="{Binding Name}" Width="200" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Description}" Width="600" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Cost}" Width="50"></TextBlock>
+                        <TextBlock Text="{Binding Weight}" Width="50"></TextBlock>
+                        <TextBlock Text="{Binding Width}" Width="50"></TextBlock>
+                        <TextBlock Text="{Binding Height}" Width="50"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
